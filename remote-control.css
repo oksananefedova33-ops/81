@@ -1,0 +1,461 @@
+/* ============================================
+   REMOTE CONTROL MODULE - STYLES
+   /editor/modules/remote-control/remote-control.css
+   ============================================ */
+
+/* Модальное окно - фон */
+.rc-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.2s ease;
+}
+
+.rc-modal-backdrop.hidden {
+    display: none;
+}
+
+/* Модальное окно */
+.rc-modal {
+    width: 90%;
+    max-width: 900px;
+    max-height: 80vh;
+    background: #0f1622;
+    border-radius: 16px;
+    border: 1px solid #2ea8ff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: slideIn 0.3s ease;
+}
+
+/* Шапка модалки */
+.rc-modal-header {
+    padding: 20px;
+    background: #111927;
+    border-bottom: 1px solid #1f2b3b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rc-modal-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* Кнопка закрытия */
+.rc-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: #1f2937;
+    color: #9ca3af;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rc-close:hover {
+    background: #374151;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Тело модалки */
+.rc-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* ============ ВКЛАДКИ ============ */
+.rc-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #1f2b3b;
+    padding-bottom: 10px;
+}
+
+.rc-tab {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #9ca3af;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.rc-tab:hover {
+    background: #1a2533;
+    color: #e5e7eb;
+}
+
+.rc-tab.active {
+    background: #1a2533;
+    color: #2ea8ff;
+    border-color: #2ea8ff;
+}
+
+/* ============ КОНТЕНТ ВКЛАДОК ============ */
+.rc-tab-content {
+    animation: fadeIn 0.3s;
+}
+
+.rc-tab-content.hidden {
+    display: none;
+}
+
+.rc-section {
+    margin-bottom: 24px;
+}
+
+.rc-section h4 {
+    color: #e5e7eb;
+    margin: 0 0 12px 0;
+    font-size: 16px;
+}
+
+/* ============ ФОРМЫ ============ */
+.rc-token-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.rc-token-group input {
+    flex: 1;
+    padding: 10px;
+    background: #111925;
+    border: 1px solid #213247;
+    border-radius: 8px;
+    color: #e4eef9;
+    font-family: monospace;
+}
+
+.rc-add-site {
+    display: flex;
+    gap: 8px;
+}
+
+.rc-add-site input,
+.rc-section input[type="text"],
+.rc-section input[type="file"] {
+    flex: 1;
+    padding: 10px;
+    background: #111925;
+    border: 1px solid #213247;
+    border-radius: 8px;
+    color: #e4eef9;
+}
+
+.rc-section input[type="text"]:focus,
+.rc-add-site input:focus {
+    border-color: #2ea8ff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 168, 255, 0.1);
+}
+
+/* ============ КНОПКИ ============ */
+.rc-btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: #1f2937;
+    color: #e5e7eb;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.rc-btn:hover {
+    background: #374151;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rc-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.rc-btn.primary {
+    background: #2ea8ff;
+    border-color: #1e98ef;
+    color: #ffffff;
+}
+
+.rc-btn.primary:hover {
+    background: #1e98ef;
+}
+
+.rc-btn.danger {
+    background: #dc2626;
+    border-color: #991b1b;
+    color: #ffffff;
+}
+
+.rc-btn.danger:hover {
+    background: #991b1b;
+}
+
+.rc-btn.small {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.rc-btn.large {
+    padding: 14px 24px;
+    font-size: 16px;
+}
+
+/* ============ СПИСОК САЙТОВ ============ */
+.rc-sites-list {
+    background: #111925;
+    border: 1px solid #213247;
+    border-radius: 8px;
+    padding: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.rc-site-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #0f1622;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.2s;
+}
+
+.rc-site-item:hover {
+    background: #1a2533;
+    transform: translateX(4px);
+}
+
+.rc-site-item:last-child {
+    margin-bottom: 0;
+}
+
+.rc-site-info strong {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.rc-site-info span {
+    color: #2ea8ff;
+    font-size: 14px;
+}
+
+.rc-site-info small {
+    display: block;
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.rc-site-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* ============ ЧЕКБОКСЫ ============ */
+.rc-sites-checkboxes {
+    background: #111925;
+    border: 1px solid #213247;
+    border-radius: 8px;
+    padding: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.rc-checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.rc-checkbox-item:hover {
+    background: rgba(46, 168, 255, 0.05);
+    border-radius: 6px;
+}
+
+.rc-checkbox-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.rc-checkbox-item span {
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+/* ============ РЕЗУЛЬТАТЫ ============ */
+.rc-results {
+    background: #111925;
+    border: 1px solid #213247;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 16px 0;
+}
+
+.rc-results h4 {
+    margin: 0 0 12px 0;
+    color: #e5e7eb;
+}
+
+.rc-result-item {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.rc-result-item.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.rc-result-item.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.rc-result-detail {
+    margin-left: 20px;
+    color: #9ca3af;
+    font-size: 13px;
+    padding: 2px 0;
+}
+
+/* ============ ИСТОРИЯ ============ */
+.rc-history {
+    background: #111925;
+    border: 1px solid #213247;
+    border-radius: 8px;
+    padding: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.rc-history-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.rc-history-item {
+    padding: 10px;
+    background: #0f1622;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 1px solid #213247;
+}
+
+.rc-history-item.success {
+    border-left: 3px solid #10b981;
+}
+
+.rc-history-item.failed {
+    border-left: 3px solid #ef4444;
+}
+
+/* ============ SCROLLBAR ============ */
+.rc-modal-body::-webkit-scrollbar,
+.rc-sites-list::-webkit-scrollbar,
+.rc-sites-checkboxes::-webkit-scrollbar,
+.rc-history::-webkit-scrollbar {
+    width: 6px;
+}
+
+.rc-modal-body::-webkit-scrollbar-track,
+.rc-sites-list::-webkit-scrollbar-track,
+.rc-sites-checkboxes::-webkit-scrollbar-track,
+.rc-history::-webkit-scrollbar-track {
+    background: #0f1622;
+}
+
+.rc-modal-body::-webkit-scrollbar-thumb,
+.rc-sites-list::-webkit-scrollbar-thumb,
+.rc-sites-checkboxes::-webkit-scrollbar-thumb,
+.rc-history::-webkit-scrollbar-thumb {
+    background: #2a3441;
+    border-radius: 3px;
+}
+
+.rc-modal-body::-webkit-scrollbar-thumb:hover,
+.rc-sites-list::-webkit-scrollbar-thumb:hover,
+.rc-sites-checkboxes::-webkit-scrollbar-thumb:hover,
+.rc-history::-webkit-scrollbar-thumb:hover {
+    background: #3a4451;
+}
+
+/* ============ АНИМАЦИИ ============ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============ АДАПТИВНОСТЬ ============ */
+@media (max-width: 768px) {
+    .rc-modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .rc-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .rc-add-site {
+        flex-direction: column;
+    }
+    
+    .rc-site-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .rc-site-actions {
+        margin-top: 8px;
+        width: 100%;
+    }
+    
+    .rc-site-actions .rc-btn {
+        flex: 1;
+    }
+}
